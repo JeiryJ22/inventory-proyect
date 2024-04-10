@@ -1,0 +1,26 @@
+<div class="card text-white bg-primary mb-3 text-center rounded-4 mt-4">
+  <div class="card-header text-light pt-3 fw-bold">Agregar Productos</div>
+  <div class="card-body">
+    <form (ngSubmit)="emitProduct()" class="form pt-1">
+      <div class="input-container">
+        <label for="name" class="input-label my-1 mt-2 d-flex fw-bold">Nombre del producto:</label>
+        <input [(ngModel)]="products.name" name="name" type="text" class="form-control my-2" placeholder="Nombre:" />
+      </div>
+      <div class="input-container">
+        <label for="quantity" class="input-label my-1 mt-2 d-flex fw-bold">Cantidad (Unidades):</label>
+        <input [(ngModel)]="products.quantity" name="quantity" type="text" class="form-control my-2"
+          placeholder="Cantidad (Unidades):" />
+      </div>
+      <div class="input-container">
+        <label for="price" class="input-label my-1 mt-2 d-flex fw-bold">Precio:</label>
+        <input [(ngModel)]="products.price" name="price" xtype="text" class="form-control my-2"
+          [placeholder]="'Precio: ' + products.price" />
+      </div>
+      <div class="button mt-4">
+        <button type="submit" class="btn mx-2">
+          Agregar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

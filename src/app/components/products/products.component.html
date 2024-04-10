@@ -1,0 +1,36 @@
+<div class="products-container">
+  <div class="title">
+    <h4 class="fw-bold mt-4">Productos</h4>
+  </div>
+  <table class="table table-hover text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad (Unidades)</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Subtotal</th>
+        <th scope="col">ITBIS(18%)</th>
+        <th scope="col">Total</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="table-light" *ngFor="let products of productsInventory;
+              let i = index;
+              let isLast = last" [ngClass]="{'table-dark': isLast}">
+      <tr class="table-active">
+        <td class="fw-bold">{{i+1}}</td>
+        <td>{{products.name}}</td>
+        <td>{{products.quantity}}</td>
+        <td>RD{{products.price | currency}}</td>
+        <td>RD{{products.subtotal | currency}}</td>
+        <td>{{products.itbis | currency}}</td>
+        <td>RD{{products.total | currency}}</td>
+        <td class="d-flex">
+          <button class="btn btn-danger" (click)="deleteProduct(products.id)">x</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <h4>No products to show</h4> -->
+</div>

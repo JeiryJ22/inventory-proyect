@@ -1,0 +1,13 @@
+Aquí está el desglose de la fórmula:
+
+(producto.quantity * producto.price): Multiplica la cantidad del producto por el precio unitario para calcular el precio total antes de impuestos. Por ejemplo, si tienes 10 unidades de un producto a $20 cada una, esto daría un total de $200.
+
+(1 + producto.itbis): A este total se le suma el impuesto ITBIS. El impuesto ITBIS se representa como un decimal,
+no como un porcentaje, por lo que si el ITBIS es, por ejemplo, el 0.18 (que corresponde al 18%), se suma 1 para
+incluir el precio base sin impuestos y luego se suma el impuesto, que en este caso sería 0.18. Esto asegura que el precio total
+refleje tanto el precio base como el impuesto. Por ejemplo, si el precio base es $200 y el ITBIS es 0.18, la fórmula daría un total
+de $236 (200 * 1.18).
+
+
+id: https://www.npmjs.com/package/uuid
+

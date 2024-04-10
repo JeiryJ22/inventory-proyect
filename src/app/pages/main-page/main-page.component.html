@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <!--Poducts-->
+    <div class="col">
+      <app-products [productsInventory]="products" (onDeleteProduct)="onDeleteProduct($event)"
+        *ngIf="products.length > 0; else notEmpty">
+      </app-products>
+
+      <div class="container" *ngIf="products.length > 0">
+        <p class="price fw-bold">Monto total: <span class="fw-light bg-light rounded-3 p-2">RD{{ onTotal | currency }}</span></p>
+      </div>
+
+      <ng-template #notEmpty>
+        <div class="container mt-5 text-center" *ngIf="!products.length">
+          <p>No ha agregado ningún producto.</p>
+        </div>
+      </ng-template>
+    </div>
+    <!--Form-->
+    <div class="col">
+      <app-form (addingNewProduct)="onNewProduct($event)"></app-form>
+    </div>
+  </div>
+</div>
